@@ -10,7 +10,10 @@ public class MedalHandler : MonoBehaviour {
 
     static bool[] goldArray; 
     static bool[] silverArray;
-    static bool[] bronzeArray; 
+    static bool[] bronzeArray;
+
+    //how much medals you need to unlock the next world
+    static int[] worldUnlocks = { 5, 9, 14, 19, 23 };
 
     public static int CalcMedalType(float bronzeTime, float silverTime, float goldTime, float totalTime)
     { 
@@ -32,8 +35,7 @@ public class MedalHandler : MonoBehaviour {
             CalcGold();
         }
 
-        return medalTypeNum;
-            
+        return medalTypeNum;            
     }
 
     public static void CalcGold()
@@ -42,10 +44,7 @@ public class MedalHandler : MonoBehaviour {
         {
             goldNum++;
             goldArray[GoalTimes.nextLevel] = true;
-            print("get a gold");
         }
-        else
-            print("Gold Medal Already Aquired.");
     }
 
     public static void CalcSilver()
@@ -54,10 +53,7 @@ public class MedalHandler : MonoBehaviour {
         {
             silverNum++;
             silverArray[GoalTimes.nextLevel] = true;
-            print("get a silver");
         }
-        else
-            print("Silver Medal Already Aquired.");
     }
 
     public static void CalcBronze()
@@ -66,10 +62,7 @@ public class MedalHandler : MonoBehaviour {
         {
             bronzeNum++;
             bronzeArray[GoalTimes.nextLevel] = true;
-            print("get a bronze");
         }
-        else
-            print("Bronze Medal Already Aquired");
     }
 
     public static void InitArrays()
@@ -77,7 +70,6 @@ public class MedalHandler : MonoBehaviour {
         goldArray = new bool[SceneManager.sceneCountInBuildSettings];
         silverArray = new bool[SceneManager.sceneCountInBuildSettings];
         bronzeArray = new bool[SceneManager.sceneCountInBuildSettings];
-        print("CLICKED! NEW GAME ACTIVATED!");
     }
 
     public static int GetGoldMedals()
@@ -93,5 +85,25 @@ public class MedalHandler : MonoBehaviour {
     public static int GetBronzeMedals()
     {
         return bronzeNum;
+    }
+
+    public static int GetTotalMedals()
+    {
+        int totalMedals = GetGoldMedals() + GetSilverMedals() + GetBronzeMedals();
+        return totalMedals;
+    }
+
+    public static int GetWorldUnlockNum(int worldNum)
+    {
+        worldNum--;
+        return worldUnlocks[worldNum];
+    }
+
+    public static int GetMedalType(int levelNum)
+    {
+        if (goldArray[levelNum]) return 3;
+        else if (silverArray[levelNum]) return 2;
+        else if (bronzeArray[levelNum]) return 1;
+        else return 0;
     }
 }

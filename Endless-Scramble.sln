@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Endless-Scramble", "Endless-Scramble.csproj", "{BB00CCF2-80D2-EE6C-BBA8-D9D9385A2481}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Endless-Scramble.Editor", "Endless-Scramble.Editor.csproj", "{BFE44B97-D8BC-BAD4-E220-158990D70AA2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB00CCF2-80D2-EE6C-BBA8-D9D9385A2481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB00CCF2-80D2-EE6C-BBA8-D9D9385A2481}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB00CCF2-80D2-EE6C-BBA8-D9D9385A2481}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB00CCF2-80D2-EE6C-BBA8-D9D9385A2481}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFE44B97-D8BC-BAD4-E220-158990D70AA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFE44B97-D8BC-BAD4-E220-158990D70AA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFE44B97-D8BC-BAD4-E220-158990D70AA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFE44B97-D8BC-BAD4-E220-158990D70AA2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
