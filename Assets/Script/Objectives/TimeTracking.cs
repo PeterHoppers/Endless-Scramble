@@ -1,14 +1,11 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.Collections;
 
-public class TimeTracking : MonoBehaviour {
-
+public class TimeTracking : MonoBehaviour
+{
 	Text _text;
     Transform _panel;
     GameObject levelMenu;
-    DialogueButton dButton;
 
     public float GoldTime;
     public float SilverTime;
@@ -23,11 +20,10 @@ public class TimeTracking : MonoBehaviour {
 
 	bool endTime;
 	bool playTime = true;
-    bool crashing = false;
-    
-	// Use this for initialization
-	void Start () 
-	{
+
+    // Use this for initialization
+    void Start()
+    {
         //Find different gameObjects and transforms and check if they exist
         levelMenu = GameObject.FindGameObjectWithTag("LevelMenu");
 
@@ -56,17 +52,16 @@ public class TimeTracking : MonoBehaviour {
 
         if (goldMedal != null)
             goldMedal.gameObject.SetActive(false);
-        
+
         _panel.gameObject.SetActive(false);
 
         DeathManager.PlayerKilled += ResetTimer; //subscribes resetTimer to whenever the player dies
-
-        if (!IsSceneTutorial()) //resets the timeScale to 1 if the level is not the tutorial
-            Time.timeScale = 1;
+        
+        Time.timeScale = 1;
     }
-	
-	// Update is called once per frame
-	void Update () 
+
+    // Update is called once per frame
+    void Update () 
 	{
 		if (!endTime) //if the level has not ended yet
 		{
@@ -75,15 +70,6 @@ public class TimeTracking : MonoBehaviour {
                 UpdateTimer();
 			}
 		}
-
-        if (crashing) //flag flipped when the game starts to crash
-        {
-            if (Input.GetKeyDown("e")) //when the player presses the button to move onto the screen that crashes
-            {
-                StartCoroutine(dButton.Crash());
-            }
-            
-        }
     }
 
     //Using the time since the level began and the time calculated from it being reset or paused
@@ -108,69 +94,38 @@ public class TimeTracking : MonoBehaviour {
 		playTime = isActive;
 		
 		if (isActive)
-			delayTimer = (Time.timeSinceLevelLoad - totalTime);
-		
+			delayTimer = (Time.timeSinceLevelLoad - totalTime);		
 	}
 
-    //When something hits its 2D collider
-	void OnTriggerEnter2D (Collider2D col)
-	{
-		if (col.gameObject.tag.Equals("Player"))
-		{
-            //----------Special Cases only During Tutorial----------------
-            if (IsSceneTutorial())
-            {
-                dButton = GameObject.FindGameObjectWithTag("ConvoUIButton").GetComponent<DialogueButton>();
-                dButton.SwitchingState(); //turns on dialogue when levels is finished
-            }
-            
-            if (GlobalVars.isTutorial) //if a level is completed before the game "crashes"
-            {
-                crashing = true; //activate crashing prompt
-            }
-            //------------------This is normal-----------------
-            else //Display the result values
-            {
-                _text.text = "Final Time Is: " + totalTime.ToString();
-                _panel.gameObject.SetActive(true);
-                _panel.transform.Find("BronzeText").GetComponent<Text>().text = BronzeTime.ToString() + ".00";
-                _panel.transform.Find("SilverText").GetComponent<Text>().text = SilverTime.ToString() + ".00";
-                _panel.transform.Find("GoldText").GetComponent<Text>().text = GoldTime.ToString() + ".00";
-            }
-
-            endTime = true; //stop the timer
-
-            int medalNum = 0;
-
-            if (SceneManager.GetActiveScene().name != "Tutorial") //calcuates the level time into medals
-                medalNum = MedalHandler.CalcMedalType(BronzeTime, SilverTime, GoldTime, totalTime);
-            else //just show the medals if it is the tutorial
-                medalNum = 3;
-
-            switch (medalNum) //activates a medal based upon the number it gets
-            {
-                case 3:
-                    goldMedal.gameObject.SetActive(true);
-                    goto case 2;
-                case 2:
-                    silverMedal.gameObject.SetActive(true);
-                    goto case 1;
-                case 1:
-                    bronzeMedal.gameObject.SetActive(true);
-                    break;                
-                default:
-                    print(":(");
-                    break;
-            }
-
-            //stop time if the level isn't the tutorial. We need time to still be functioning in the tutorial for animations to play
-            if (!IsSceneTutorial()) 
-                Time.timeScale = 0;
-		}
-	}
-
-    bool IsSceneTutorial() //checks if the scence is the tutorial, due to that being a unique scene gameplay wise
+    public void FinishedLevel()
     {
-        return (SceneManager.GetActiveScene().name == "Tutorial");
+        _text.text = "Final Time Is: " + totalTime.ToString();
+        _panel.gameObject.SetActive(true);
+        _panel.transform.Find("BronzeText").GetComponent<Text>().text = BronzeTime.ToString() + ".00";
+        _panel.transform.Find("SilverText").GetComponent<Text>().text = SilverTime.ToString() + ".00";
+        _panel.transform.Find("GoldText").GetComponent<Text>().text = GoldTime.ToString() + ".00";
+
+        endTime = true; //stop the timer
+
+        int medalNum = 0;
+
+        medalNum = MedalHandler.CalcMedalType(BronzeTime, SilverTime, GoldTime, totalTime);
+
+        switch (medalNum) //activates a medal based upon the number it gets
+        {
+            case 3:
+                goldMedal.gameObject.SetActive(true);
+                goto case 2;
+            case 2:
+                silverMedal.gameObject.SetActive(true);
+                goto case 1;
+            case 1:
+                bronzeMedal.gameObject.SetActive(true);
+                break;
+            default:
+                break;
+        }
+
+        Time.timeScale = 0;
     }
 }

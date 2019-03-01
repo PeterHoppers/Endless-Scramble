@@ -2,7 +2,7 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class MedalHandler : MonoBehaviour {
+public class MedalHandler {
 
     static int bronzeNum;
     static int silverNum;

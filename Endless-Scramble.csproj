@@ -326,6 +326,7 @@
     <Compile Include="Assets\Script\Objectives\NewGameCreation.cs" />
     <Compile Include="Assets\Script\Objectives\TimeTracking.cs" />
     <Compile Include="Assets\Script\Objectives\TotalTimes.cs" />
+    <Compile Include="Assets\Script\Objectives\TutorialTime.cs" />
     <Compile Include="Assets\Script\Objectives\UnlockNewLevels.cs" />
     <Compile Include="Assets\Script\Obstacles\DisableObstacle.cs" />
     <Compile Include="Assets\Script\Obstacles\EnemiesKill.cs" />
@@ -336,6 +337,7 @@
     <Compile Include="Assets\Script\Obstacles\RotatingObstacle.cs" />
     <Compile Include="Assets\Script\Obstacles\StraightObstacle.cs" />
     <Compile Include="Assets\Script\Obstacles\StraightObstacleSpawn.cs" />
+    <Compile Include="Assets\Script\Player\EndLocation.cs" />
     <Compile Include="Assets\Script\Player\KillPlayers.cs" />
     <Compile Include="Assets\Script\Player\Movement.cs" />
     <Compile Include="Assets\Script\Player\MultiplayerDistance.cs" />

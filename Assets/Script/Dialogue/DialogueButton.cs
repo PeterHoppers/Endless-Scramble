@@ -55,7 +55,7 @@ public class DialogueButton : MonoBehaviour {
 		player.GetComponent<Movement>().enabled = !switchState; //changes the state of movement
         this.transform.parent.GetComponent<Animator>().SetBool("isUsed", switchState); //drops down or pulls up the prompt
         
-        goal.GetComponent<TimeTracking>().PauseTimer(!switchState); //either stops or starts the timer
+        goal.GetComponent<TutorialTime>().PauseTimer(!switchState); //either stops or starts the timer
 
         if (switchState)
             StartCoroutine(PauseAnimation()); //starts to write the text
