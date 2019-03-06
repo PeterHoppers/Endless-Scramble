@@ -15,7 +15,7 @@ public class MedalHandler {
     //how much medals you need to unlock the next world
     static int[] worldUnlocks = { 5, 9, 14, 19, 23 };
 
-    public static int CalcMedalType(float bronzeTime, float silverTime, float goldTime, float totalTime)
+    public static int CalcMedalType(double bronzeTime, double silverTime, double goldTime, double totalTime)
     { 
         int medalTypeNum = 0;
 

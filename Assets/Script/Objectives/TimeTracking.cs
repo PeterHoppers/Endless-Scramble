@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.IO;
 
 public class TimeTracking : MonoBehaviour
 {
@@ -7,15 +9,15 @@ public class TimeTracking : MonoBehaviour
     Transform _panel;
     GameObject levelMenu;
 
-    public float GoldTime;
-    public float SilverTime;
-    public float BronzeTime;
+    double goldTime;
+    double silverTime;
+    double bronzeTime;
 
     Transform goldMedal;
     Transform silverMedal;
     Transform bronzeMedal;
 
-	public float totalTime;
+	float totalTime;
 	float delayTimer;
 
 	bool endTime;
@@ -58,6 +60,14 @@ public class TimeTracking : MonoBehaviour
         DeathManager.PlayerKilled += ResetTimer; //subscribes resetTimer to whenever the player dies
         
         Time.timeScale = 1;
+
+        //Added loading times from an XML files
+        GoalCollector goalTimes = GoalCollector.Load(Path.Combine(Application.dataPath, "Resources/XML/goalTimes.xml")); //Loads XML File. Code below. 
+
+        int currentSceneNum = SceneManager.GetActiveScene().buildIndex;
+        goldTime = goalTimes.GetGoldTime(currentSceneNum);
+        silverTime = goalTimes.GetSilverTime(currentSceneNum);
+        bronzeTime = goalTimes.GetBronzeTime(currentSceneNum);
     }
 
     // Update is called once per frame
@@ -101,15 +111,15 @@ public class TimeTracking : MonoBehaviour
     {
         _text.text = "Final Time Is: " + totalTime.ToString();
         _panel.gameObject.SetActive(true);
-        _panel.transform.Find("BronzeText").GetComponent<Text>().text = BronzeTime.ToString() + ".00";
-        _panel.transform.Find("SilverText").GetComponent<Text>().text = SilverTime.ToString() + ".00";
-        _panel.transform.Find("GoldText").GetComponent<Text>().text = GoldTime.ToString() + ".00";
+        _panel.transform.Find("BronzeText").GetComponent<Text>().text = bronzeTime.ToString("0.##");
+        _panel.transform.Find("SilverText").GetComponent<Text>().text = silverTime.ToString("0.##");
+        _panel.transform.Find("GoldText").GetComponent<Text>().text = goldTime.ToString("0.##");
 
         endTime = true; //stop the timer
 
         int medalNum = 0;
 
-        medalNum = MedalHandler.CalcMedalType(BronzeTime, SilverTime, GoldTime, totalTime);
+        medalNum = MedalHandler.CalcMedalType(bronzeTime, silverTime, goldTime, totalTime);
 
         switch (medalNum) //activates a medal based upon the number it gets
         {

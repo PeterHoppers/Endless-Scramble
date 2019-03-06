@@ -1,0 +1,14 @@
+<GoalCollection>
+ 	<GoalTimes>
+ 		<GoalTime lvlNum ="1">
+ 			<GoldTime>14.40</GoldTime>
+			<SilverTime>21.50</SilverTime>
+			<BronzeTime>30.10</BronzeTime>
+ 		</GoalTime>
+		<GoalTime lvlNum ="2">
+ 			<GoldTime>5</GoldTime>
+			<SilverTime>7</SilverTime>
+			<BronzeTime>11</BronzeTime>
+ 		</GoalTime> 		
+ 	</GoalTimes>
+ </GoalCollection>

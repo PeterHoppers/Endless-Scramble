@@ -106,7 +106,6 @@ public class TutorialTime : MonoBehaviour
 
         if (isActive)
             delayTimer = (Time.timeSinceLevelLoad - totalTime);
-
     }
 
     //When something hits its 2D collider
