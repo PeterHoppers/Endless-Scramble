@@ -6,9 +6,114 @@
 			<BronzeTime>30.10</BronzeTime>
  		</GoalTime>
 		<GoalTime lvlNum ="2">
- 			<GoldTime>5</GoldTime>
-			<SilverTime>7</SilverTime>
-			<BronzeTime>11</BronzeTime>
- 		</GoalTime> 		
+ 			<GoldTime>21.90</GoldTime>
+			<SilverTime>30.60</SilverTime>
+			<BronzeTime>46.00</BronzeTime>
+ 		</GoalTime>
+    <GoalTime lvlNum ="3">
+ 			<GoldTime>17.66</GoldTime>
+			<SilverTime>24.73</SilverTime>
+			<BronzeTime>37.00</BronzeTime>
+ 		</GoalTime>
+    <GoalTime lvlNum ="4">
+ 			<GoldTime>32.10</GoldTime>
+			<SilverTime>45.00</SilverTime>
+			<BronzeTime>67.00</BronzeTime>
+ 		</GoalTime>
+    <GoalTime lvlNum ="5">
+ 			<GoldTime>18.00</GoldTime>
+			<SilverTime>25.15</SilverTime>
+			<BronzeTime>37.80</BronzeTime>
+ 		</GoalTime>
+    <GoalTime lvlNum ="6">
+ 			<GoldTime>19.19</GoldTime>
+			<SilverTime>26.26</SilverTime>
+			<BronzeTime>39.39</BronzeTime>
+     </GoalTime>
+    <GoalTime lvlNum ="7">
+ 			<GoldTime>12.58</GoldTime>
+			<SilverTime>17.60</SilverTime>
+			<BronzeTime>27.00</BronzeTime>
+ 		</GoalTime>
+    <GoalTime lvlNum ="8">
+ 			<GoldTime>15.61</GoldTime>
+			<SilverTime>21.85</SilverTime>
+			<BronzeTime>33.00</BronzeTime>
+ 		</GoalTime>
+    <GoalTime lvlNum ="9">
+ 			<GoldTime>18.34</GoldTime>
+			<SilverTime>25.67</SilverTime>
+			<BronzeTime>39.00</BronzeTime>
+     </GoalTime>
+    <GoalTime lvlNum ="10">
+ 			<GoldTime>20.77</GoldTime>
+			<SilverTime>29.10</SilverTime>
+			<BronzeTime>44.00</BronzeTime>
+ 		</GoalTime>
+    <GoalTime lvlNum ="11">
+ 			<GoldTime>19.10</GoldTime>
+			<SilverTime>26.72</SilverTime>
+			<BronzeTime>40.11</BronzeTime>
+ 		</GoalTime>
+    <GoalTime lvlNum ="12">
+ 			<GoldTime>19.50</GoldTime>
+			<SilverTime>24.40</SilverTime>
+			<BronzeTime>39.00</BronzeTime>
+ 		</GoalTime>
+    <GoalTime lvlNum ="13">
+ 			<GoldTime>24.50</GoldTime>
+			<SilverTime>34.30</SilverTime>
+			<BronzeTime>51.45</BronzeTime>
+ 		</GoalTime>
+    <GoalTime lvlNum ="14">
+ 			<GoldTime>20.50</GoldTime>
+			<SilverTime>28.50</SilverTime>
+			<BronzeTime>39.65</BronzeTime>
+ 		</GoalTime>
+    <GoalTime lvlNum ="15">
+ 			<GoldTime>15.70</GoldTime>
+			<SilverTime>22.00</SilverTime>
+			<BronzeTime>33.10</BronzeTime>
+ 		</GoalTime>
+    <GoalTime lvlNum ="16">
+ 			<GoldTime>21.50</GoldTime>
+			<SilverTime>27.00</SilverTime>
+			<BronzeTime>44.50</BronzeTime>
+ 		</GoalTime>
+    <GoalTime lvlNum ="17">
+ 			<GoldTime>17.60</GoldTime>
+			<SilverTime>24.65</SilverTime>
+			<BronzeTime>36.96</BronzeTime>
+ 		</GoalTime>
+    <GoalTime lvlNum ="18">
+ 			<GoldTime>5.00</GoldTime>
+			<SilverTime>15.00</SilverTime>
+			<BronzeTime>30.10</BronzeTime>
+ 		</GoalTime>
+    <GoalTime lvlNum ="19">
+ 			<GoldTime>11.90</GoldTime>
+			<SilverTime>16.44</SilverTime>
+			<BronzeTime>25.00</BronzeTime>
+ 		</GoalTime>
+    <GoalTime lvlNum ="20">
+ 			<GoldTime>10.15</GoldTime>
+			<SilverTime>14.21</SilverTime>
+			<BronzeTime>21.31</BronzeTime>
+ 		</GoalTime>
+    <GoalTime lvlNum ="21">
+ 			<GoldTime>15.75</GoldTime>
+			<SilverTime>22.05</SilverTime>
+			<BronzeTime>33.75</BronzeTime>
+ 		</GoalTime>
+    <GoalTime lvlNum ="22">
+ 			<GoldTime>17.00</GoldTime>
+			<SilverTime>23.90</SilverTime>
+			<BronzeTime>50.16</BronzeTime>
+ 		</GoalTime>
+    <GoalTime lvlNum ="23">
+ 			<GoldTime>25.10</GoldTime>
+			<SilverTime>35.14</SilverTime>
+			<BronzeTime>60.12</BronzeTime>
+ 		</GoalTime>
  	</GoalTimes>
  </GoalCollection>
