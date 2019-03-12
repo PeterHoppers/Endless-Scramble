@@ -68,6 +68,8 @@ public class MovingGoalManager : MonoBehaviour {
         if (possibleSpots.Length <= 0)
             return;
 
+        currentPosition = 0;
+
         goal.transform.position = possibleSpots[0];
         blueGoal.transform.position = possibleSpots[1];
 
