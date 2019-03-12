@@ -31,6 +31,8 @@ public class Movement : MonoBehaviour {
     Animator leftAnim;
     Animator rightAnim;
 
+    int scramble = 0;
+
     void Start()
     {
         rect = GetComponent<RectTransform>();
@@ -69,47 +71,45 @@ public class Movement : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             transform.Translate(VectorW);
-            upAnim.Play("WPress");
+            ScrambleDirections();
         }
         else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             transform.Translate(VectorS);
-            downAnim.Play("SPress");
+            ScrambleDirections();
         }
         else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             transform.Translate(VectorA);
-            leftAnim.Play("APress");
+            ScrambleDirections();
         }
         else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             transform.Translate(VectorD);
-            rightAnim.Play("DPress");
-        }
-
-        //----Reset the ability to scramble controls whenever the key is lifted back up again-----
-        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D) ||
-                            Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) ||
-                                Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
-        {
             ScrambleDirections();
-        }			
+        }		
 	}
 
     //Set the movement of the buttons to a random direction and the sprite that matches that direction
     void ScrambleDirections()
     {
-        int num = 0;
-
         //if it is the tutorial, don't scramble
         if (GlobalVars.isTutorial)
-            num = 1;
+            scramble = 1;
         else
-            num = Random.Range(1, 25);
+        {
+            //to prevent it from looking awkward, this bit of code prevents the same number from getting pulled twice
+            int check = scramble;
+            do
+            {
+                scramble = Random.Range(1, 25);
+            } while (check == scramble);
+
+        }            
 
         //create and then parse a 4 digit string based upon
         //the random number that was generated
-        string numInString = CreatePositionString(num);
+        string numInString = CreatePositionString(scramble);
 
         int upNum = int.Parse(numInString.Substring(0, 1));
         int downNum = int.Parse(numInString.Substring(1, 1));
