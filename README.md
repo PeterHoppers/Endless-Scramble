@@ -1,1 +1,5 @@
 # Endless Scramble
+
+This project was done solo. The main premise of it was that you would control a character through a 2D grid and go from start to finish. Every time you would press a button though to move, the directions each button was mapped to would switch. With the simple programming of the game, it helped push me to look at the design of the game. Hazards were introduced through the isolation principle. Playtesting was a recurring element in order to help balance levels and to help the game feel. Also, the simplistic programming helped push systematic and streamlined thinking. I made a whole level creation system to help minimize the amount of time it would take to create a level. I used to have building blocks of certain sizes that I would need to piece together to create a level and every level had to be the exact same size. After rebuilding the game from the ground up, I was able to create levels through clicking points instead of building blocks and had dynamic level sizes.
+
+Made in Unity.
