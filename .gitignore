@@ -1,0 +1,17 @@
+*.meta
+*.bin
+
+# Ignore all
+*
+
+# Unignore all with extensions
+!*.*
+
+# Unignore all dirs
+!*/
+*.meta
+*.meta
+*.dag
+*.outputdata
+*.mvfrm
+*.cache

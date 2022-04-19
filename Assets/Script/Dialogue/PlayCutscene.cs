@@ -1,16 +1,17 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 using System.Collections;
 
 public class PlayCutscene : MonoBehaviour {
 
-    public MovieTexture movie;
+    public VideoPlayer movie;
 
     bool isPlaying;
 	// Use this for initialization
 	void Start ()
     {
-        GetComponent<RawImage>().texture = movie as MovieTexture;
+        //GetComponent<RawImage>().texture = movie as VideoPlayer;
 	}
 	
 	// Update is called once per frame
